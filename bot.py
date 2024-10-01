@@ -1,4 +1,5 @@
 import discord
+from dotenv import load_dotenv
 from googletrans import Translator
 from langdetect import detect
 import json
@@ -46,12 +47,15 @@ async def on_message(message):
             translated = translator.translate(message.content, dest=user_lang)
             await message.channel.sned(f"{message.author.mention}: {translated.text}")
 
-# Run the bot
+# Load environment variables from .env file
+load_dotenv()
+
+# Get the bot token from the environment variables
+TOKEN = os.getenv("DISCORD_TOKEN")
+
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
 
-load_dotenv()  # Load environment variables from .env
-
-TOKEN = os.getenv("MTI5MDU0MzY2NzQzNzc2ODc4Ng.GFaxOB.INPudxlFxOXqVCICquiuQijSjEC3hLDO7djypU")
+# Run the bot
 client.run(TOKEN)
