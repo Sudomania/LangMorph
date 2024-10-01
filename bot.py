@@ -5,7 +5,7 @@ import json
 import os
 
 
-# initialize the Discord Client
+# initialize the Discord client
 client = discord.Client()
 translator = Translator()
 
@@ -50,4 +50,3 @@ async def on_message(message):
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
-
