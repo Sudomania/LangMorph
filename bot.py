@@ -50,3 +50,5 @@ async def on_message(message):
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
+
+client.run('1290543667437768786')
