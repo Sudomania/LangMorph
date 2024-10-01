@@ -51,4 +51,7 @@ async def on_message(message):
 async def on_ready():
     print(f'Logged in as {client.user}')
 
-client.run('1290543667437768786')
+load_dotenv()  # Load environment variables from .env
+
+TOKEN = os.getenv("MTI5MDU0MzY2NzQzNzc2ODc4Ng.GFaxOB.INPudxlFxOXqVCICquiuQijSjEC3hLDO7djypU")
+client.run(TOKEN)
